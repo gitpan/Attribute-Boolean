@@ -21,4 +21,4 @@ requires:
   Attribute::Handlers: 0
   Variable::Magic: 0
   perl: 0
-version: v0.0.2
+version: v1.0.3
