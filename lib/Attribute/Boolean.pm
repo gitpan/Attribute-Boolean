@@ -19,11 +19,11 @@ use Attribute::Boolean::Value;
 
 =head1 VERSION
 
-Version v1.0.4
+Version v1.0.6
 
 =cut
 
-our $VERSION = v1.0.4;
+our $VERSION = v1.0.6;
 # Don't forget the version in the pod above.
 
 =head1 SYNOPSYS
@@ -83,7 +83,7 @@ This returns 0 in numeric context, "false" in string context.
 
 =head2 TO_JSON
 
-Provided that allow_blessed is set on the JSON (or JSON::XS) object,
+Provided that convert_blessed is set on the JSON (or JSON::XS) object,
 the variable will correctly convert to JSON true or false.
 
     my $json = new JSON;

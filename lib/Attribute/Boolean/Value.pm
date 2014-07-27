@@ -9,12 +9,16 @@ use utf8;
 
 Attribute::Boolean::Value - An overridden class for a boolean value
 
+=head1 USAGE
+
+This is a private class for use only by Attribute::Boolean
+
 =cut
 
 use parent 'Exporter';
 use Carp;
 
-our $VERSION = v1.0.4;
+our $VERSION = v1.0.6;
 our @EXPORT = qw(true false);
 
 sub true();
@@ -27,7 +31,7 @@ use overload
    '!'	   => sub { ${$_[0]} ? false : true},
    '-'	   => sub { croak 'subtraction not possible'},
    '+'	   => sub { croak 'addition not possible'},
-   # fallback => 0
+   fallback => 1
    ;
 
 my $true  = do { bless \(my $dummy = 1), __PACKAGE__ };

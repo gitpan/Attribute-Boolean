@@ -4,22 +4,22 @@ Attribute::Boolean - Mark scalars as pure booleans
 
 # VERSION
 
-Version v1.0.2
+Version v1.0.6
 
 # SYNOPSYS
 
 This allows you to flag a variable as a boolean.
 In numeric context, it will have the value 0 or 1.
-In string context is will have the falue "false" or "true".
+In string context is will have the value "false" or "true".
 In JSON, it will correctly return false or true values.
 
     my $bool : Boolean;
     print $bool;    # "false"
     $bool = (1 + 2 == 3);
     print $bool;    # "true"
-    print $bool ? "yes" : "no";	 # "yes"
+    print $bool ? "yes" : "no";  # "yes"
     $bool = false;
-    print $bool ? "yes" : "no";	 # "no"
+    print $bool ? "yes" : "no";  # "no"
 
 # EXPORT
 
@@ -35,8 +35,8 @@ or
 
     my $bool : Boolean = true;
 
-If any perl true value is assigned, the variable is true, if any
-perl false value assigned, the variable is false.
+If any perl **true** value is assigned, the variable is true; if a
+perl **false** value is assigned, the variable is false.
 
 ## true
 
@@ -48,21 +48,21 @@ This returns 0 in numeric context, "false" in string context.
 
 ## TO\_JSON
 
-Provided that allow\_blessed is set on the JSON (or JSON::XS) object,
+Provided that convert\_blessed is set on the JSON (or JSON::XS) object,
 the variable will correctly convert to JSON true or false.
 
     my $json = new JSON;
     $json->pretty->convert_blessed;
     my $bool : Boolean;
     my %hash = (
-	value => $bool,
-	me    => true,
+        value => $bool,
+        me    => true,
     );
     print $json->encode(\%hash);    # {
-				    #     "value" : false,
-				    #     "me"    : true
-				    # }
-				    
+                                    #     "value" : false,
+                                    #     "me"    : true
+                                    # }
+                                    
 
 # AUTHOR
 
@@ -74,12 +74,6 @@ Please report any bugs or feature requests to `bug-attribute-boolean+ at rt.cpan
 the web interface at [http://rt.cpan.org/NoAuth/ReportBug.html?Queue=attribute-boolean+](http://rt.cpan.org/NoAuth/ReportBug.html?Queue=attribute-boolean+).  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
-
-
-
-
-
-
 # SUPPORT
 
 You can find documentation for this module with the perldoc command.
@@ -89,10 +83,10 @@ You can find documentation for this module with the perldoc command.
 # ACKNOWLEDGEMENTS
 
 Alan Haggai Alavi `<alanhaggai@alanhaggai.org>` for his
-Scalar::Boolean module [Scalar::Boolean](http://search.cpan.org/perldoc?Scalar::Boolean) which was the inspiration
+[Scalar::Boolean](https://metacpan.org/pod/Scalar::Boolean) module  which was the inspiration
 for this module.
 
-# LICENSE AND COPYRIGHT
+# LICENCE AND COPYRIGHT
 
 Copyright 2014 Cliff Stanford.
 
